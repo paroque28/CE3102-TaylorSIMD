@@ -12,9 +12,13 @@ namespace anpi
     class funcion
     {
     public:
-        virtual inline T operator() (const T val) const;
+        virtual T operator() (const T val) const {
+            return 0;
+        }
 
-        virtual inline T diff(const T val, const unsigned int n) const;
+        virtual T diff(const T val, const unsigned int n) const {
+            return 0;
+        }
     };
 
 }
