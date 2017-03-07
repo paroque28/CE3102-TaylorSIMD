@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/main.cpp
+iostream
+-
+src/ln_profe.h
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/src/ln_profe.h
+src/test.h
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/src/test.h
+
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/src/function.h
+
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/src/ln_profe.h
+function.h
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/src/function.h
+cmath
+-
+
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/src/test.h
+chrono
+-
+iostream
+-
+function.h
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/src/function.h
+typeinfo
+-
+
