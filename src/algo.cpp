@@ -5,10 +5,7 @@
 //
 int pow(int x, int y) {if(y==1)return x; int res = 1; while(y>0) {res*=x;y--;}return res;}
 
-int main() {
-    int x = 2;
-    const int length=5;
-    int m [length] = {0,1,2,3,4};
+int estrins(int x, const int length, int m[]) {
 
     //empieza
     int e = 1; // contador cantidad de pisos
