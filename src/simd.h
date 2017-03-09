@@ -33,6 +33,8 @@ namespace anpi{
                             __m128d xsd = _mm_set_pd1(x_ala_e);
                             __m128d interd = _mm_mul_pd(xsd, rightd);
                             __m128d resd = _mm_add_pd(leftd, interd);
+                            a[i] = resd[0];
+                            a[i + 2 * exponente] = resd[1];
 
                         }
 
@@ -56,9 +58,10 @@ namespace anpi{
                         __m128 interf = _mm_mul_ps(xsf, rightf);
                         __m128 resf = _mm_add_ps(leftf, interf);
                         a[i] = resf[0];
-                        a[i + 2 * exponente] = resf[0];
-                        a[i + 4 * exponente] = resf[0];
-                        a[i + 6 * exponente] = resf[0];
+                        a[i + 2 * exponente] = resf[1];
+                        a[i + 4 * exponente] = resf[2];
+                        a[i + 6 * exponente] = resf[3];
+
                     }
                         for (;i + exponente < grado ; i += 2 * exponente) {
                             a[i] += a[i + exponente] * x_ala_e;
@@ -70,7 +73,7 @@ namespace anpi{
                 }
             }
             if (log2(grado) > (double) n) // si no es potencia de 2 le suma el ultimo
-                a[0] += a[(int)std::pow(2, n)] * x_ala_e;
+                a[0] += a[(int)std::pow(2, n)] * pow(x, exponente);
             return a[0];
         }
 

@@ -22,14 +22,13 @@ void * malloc_simd(const size_t size)
 
 int main() {
     std::cout.precision(100);
-    int l =5;
+    int l =;
     float x = 4.7f;
     float * a =(float*)(malloc_simd(l*sizeof(float)));
     for (int i = 0; i < l; ++i) {
         *(a+i) = i;
     }
-    int res = anpi::opt::estrinEval(x,a, l);
-    std::cout << res << std::endl;
+    std::cout << anpi::opt::estrinEval(x,a, l) << std::endl;
     for (int i = 0; i < l; ++i) {
         *(a+i) = i;
     }

@@ -1,5 +1,4 @@
 #include <cmath>
-
 //
 // Created by Pablo Rodriguez on 3/5/17.
 //
@@ -10,19 +9,21 @@ namespace anpi {
         T estrins(T x, T *m, const int length) {
 
             //empieza
-            int e = 1; // contador cantidad de pisos
-            int dos_pow_e = 1;//eficiencia dos a la e
+            int h = 1; // contador cantidad de pisos
+            int exponente = 1;//eficiencia dos a la e
             int n = log2(length); // cantidad pisos
-            while (e <= n) {
-                for (int i = 0; i + dos_pow_e < length; i += 2 * dos_pow_e) {
+            T x_ala_e = x;
+            while (h <= n) {
+                for (int i = 0; i + exponente < length; i += 2 * exponente) {
 
-                    m[i] += m[i + dos_pow_e] * std::pow(x, dos_pow_e);
+                    m[i] += m[i + exponente] * x_ala_e ;
                 }
-                e++;
-                dos_pow_e *= 2;
+                h++;
+                exponente *= 2;
+                x_ala_e *=x;
             }
             if (log2(length) > (double) n) // si no es potencia de 2 le suma el ultimo
-                m[0] += m[(int)std::pow(2, n)] * pow(x, dos_pow_e);
+                m[0] += m[(int)std::pow(2, n)] * pow(x, exponente);
             return m[0];
         }
     }
