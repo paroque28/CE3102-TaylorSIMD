@@ -1,6 +1,6 @@
-#ifndef PROYECTO1_FUNCTION_H
-#define PROYECTO1_FUNCTION_H
 
+#ifndef PROYECTO1
+#define PROYECTO1
 #include <cmath>
 #include <xmmintrin.h>
 
@@ -40,25 +40,25 @@ namespace anpi {
         template <typename T>
         T estrinEval(T x, T * coeficientes, int grado) {
             //Evaluacion secuencial de un polinomio mediante el metodo de Estrin.
-            int e = 1; // contador cantidad de pisos
-            int dos_pow_e = 1;//eficiencia dos a la e
+            int piso = 1; // contador cantidad de pisos
+            int exponente = 1;//eficiencia dos a la e
             int n = log2(grado); // cantidad pisos
+            int x_ala_e;
 
-            int pow_result;
-
-            while (e<=n) {
-                pow_result=pow(x,dos_pow_e)
-                for (int i = 0 ; i + dos_pow_e < grado ; i += 2 * dos_pow_e) {
-                    coeficientes[i] += coeficientes[i + dos_pow_e] * pow_result;
+            while (piso<=n) {
+                x_ala_e=pow(x,exponente);
+                for (int i = 0 ; i + exponente < grado ; i += 2 * exponente) {
+                    coeficientes[i] += coeficientes[i + exponente] * x_ala_e;
                 }
-                e++; 
-                dos_pow_e *= 2;
+                piso++;
+                exponente *= 2;
             }
             if (log2(grado) > (double) n) // si no es potencia de 2 le suma el ultimo
-                coeficientes[0] += coeficientes[pow(2, n)] * pow(x, dos_pow_e);
+                coeficientes[0] += coeficientes[pow(2, n)] * pow(x, exponente);
             return coeficientes[0];
          }
     }
 
 }
-#endif //PROYECTO1_FUNCTION_H
+
+#endif
