@@ -4,7 +4,7 @@
 
 #ifndef PROYECTO1_TEST_H
 #define PROYECTO1_TEST_H
-
+#include <typeinfo>
 #include <chrono>
 #include <iostream>
 #include "function.h"
