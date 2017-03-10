@@ -1,1 +1,0 @@
-/usr/bin/c++    -msse4.1 -g   CMakeFiles/Proyecto1.dir/main.cpp.o  -o Proyecto1 
