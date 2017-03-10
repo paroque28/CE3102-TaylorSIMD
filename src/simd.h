@@ -72,7 +72,7 @@ namespace anpi{
                 }
             }
             if (log2(grado) > (double) n) // si no es potencia de 2 le suma el ultimo
-                a[0] += a[(int)std::pow(2, n)] * pow(x, exponente);
+                a[0] += a[(int)std::pow(2, n)] * x_ala_e;
             return a[0];
         }
 
