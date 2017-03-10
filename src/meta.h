@@ -20,20 +20,11 @@ struct Factorial<0>
     enum { value = 1 };
 };
 
-template <int I, int x>
-struct difflog {
-    double y = ((I & 1) == 0) ?  -Factorial<(I - 1)>::value / std::pow(x, I) : Factorial<(I - 1)>::value / std::pow(x, I);
-};
-
-template <int x>
-struct difflog<0,x> {
-    double y = std::log(x);
-};
 
 template <int x,int I>
 struct a_log {
     a_log<x,I - 1> rest;
-    double y = ((((I-1) & 1) == 0) ?  -Factorial<(I-2 )>::value / std::pow(x, I) : Factorial<(I-2)>::value / std::pow(x, (I-1)));
+    double y = ((((I-1) & 1) == 0) ?  -Factorial<(I-2 )>::value / std::pow(x, (I-1)) : Factorial<(I-2)>::value / std::pow(x, (I-1)));
 };
 
 template <int x>
