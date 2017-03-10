@@ -1,0 +1,4 @@
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/cmake-build-debug/CMakeFiles/meta.dir
+/home/andres/Documents/Progra/CE3102-TaylorSIMD/cmake-build-debug/CMakeFiles/Proyecto1.dir
