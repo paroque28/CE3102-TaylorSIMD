@@ -5,7 +5,7 @@
 #include "src/ref.h"
 #include "src/opt.h"
 
-
+//#define HORNER
 #define __linux__
 template <typename T>
 int initVector(T* a, unsigned int l)

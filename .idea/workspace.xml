@@ -12,18 +12,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af50192c-912e-42ed-b724-3b2c26120a1f" name="Default" comment="&quot;Agregado el functor WIP&quot;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.6.3/CompilerIdC/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.6.3/CompilerIdCXX/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/functor.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/polinomios.h" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/algo.h" afterPath="$PROJECT_DIR$/src/ref.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/simd.h" afterPath="$PROJECT_DIR$/src/opt.h" />
+    <list default="true" id="af50192c-912e-42ed-b724-3b2c26120a1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Proyecto1.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Proyecto1.dir/depend.make" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/meta.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/meta.dir/depend.make" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/opt.h" afterPath="$PROJECT_DIR$/src/opt.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,13 +36,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="opt.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="opt.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/opt.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+              <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
               <folding>
                 <element signature="e#84#100#0" expanded="true" />
+                <element signature="e#178#190#0" expanded="true" />
+                <element signature="e#1034#1079#0" expanded="true" />
+                <element signature="e#1431#4497#0" expanded="false" />
+                <element signature="e#4507#5628#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,20 +65,21 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
               <folding>
-                <element signature="e#159#171#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#175#187#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ref.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ref.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ref.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-816">
-              <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+            <state relative-caret-position="68">
+              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="28" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
                 <element signature="e#156#168#0" expanded="true" />
@@ -99,28 +98,6 @@
                 <element signature="e#168#201#0" expanded="true" />
                 <element signature="e#243#269#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-              <folding>
-                <element signature="e#98#117#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ln_profe.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ln_profe.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="36" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,10 +133,10 @@
         <option value="$PROJECT_DIR$/src/simd.h" />
         <option value="$PROJECT_DIR$/src/polinomios.h" />
         <option value="$PROJECT_DIR$/src/functor.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/src/opt.h" />
         <option value="$PROJECT_DIR$/src/ref.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/opt.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -427,7 +404,7 @@
       <workItem from="1489103608556" duration="198000" />
       <workItem from="1489114413887" duration="108000" />
       <workItem from="1489116641545" duration="2151000" />
-      <workItem from="1489174144791" duration="4174000" />
+      <workItem from="1489174144791" duration="4369000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Agregado el functor WIP&quot;">
       <created>1489114511915</created>
@@ -450,11 +427,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489118638011</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="codigo ordenado">
+      <created>1489178404191</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489178404191</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6631000" />
+    <option name="totallyTimeSpent" value="6826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -488,10 +472,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Agregado el functor WIP&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Agregado el functor WIP&quot;" />
+    <MESSAGE value="codigo ordenado" />
+    <option name="LAST_COMMIT_MESSAGE" value="codigo ordenado" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/opt.h</url>
+          <line>130</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -501,6 +494,10 @@
           <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding>
             <element signature="e#84#100#0" expanded="true" />
+            <element signature="e#178#190#0" expanded="true" />
+            <element signature="e#1034#1079#0" expanded="true" />
+            <element signature="e#1431#4497#0" expanded="false" />
+            <element signature="e#4507#5628#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -527,6 +524,10 @@
           <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding>
             <element signature="e#84#100#0" expanded="true" />
+            <element signature="e#178#190#0" expanded="true" />
+            <element signature="e#1034#1079#0" expanded="true" />
+            <element signature="e#1431#4497#0" expanded="false" />
+            <element signature="e#4507#5628#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -545,6 +546,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#84#100#0" expanded="true" />
+            <element signature="e#178#190#0" expanded="true" />
+            <element signature="e#1034#1079#0" expanded="true" />
+            <element signature="e#1431#4497#0" expanded="false" />
+            <element signature="e#4507#5628#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,14 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ln_profe.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/functor.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -581,13 +578,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/opt.h">
+    <entry file="file://$PROJECT_DIR$/src/test.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        <state relative-caret-position="272">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding>
-            <element signature="e#84#100#0" expanded="true" />
+            <element signature="e#98#117#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ln_profe.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -602,16 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#98#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -620,24 +615,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#159#171#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ref.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816">
-          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+        <state relative-caret-position="68">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="28" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
             <element signature="e#156#168#0" expanded="true" />
             <element signature="e#1012#1057#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#175#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/opt.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+          <folding>
+            <element signature="e#84#100#0" expanded="true" />
+            <element signature="e#178#190#0" expanded="true" />
+            <element signature="e#1034#1079#0" expanded="true" />
+            <element signature="e#1431#4497#0" expanded="false" />
+            <element signature="e#4507#5628#0" expanded="false" />
           </folding>
         </state>
       </provider>

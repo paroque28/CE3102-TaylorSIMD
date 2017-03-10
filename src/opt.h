@@ -12,6 +12,49 @@ namespace anpi{
     namespace opt{
 
 
+        template<typename T>
+        class ln_a : public funcion<T>{
+        private:
+            T* _coef;
+            T _center;
+            unsigned int _terms;
+
+            void init(const T center, const unsigned int terms) {
+                a_log<center,terms> log;
+
+                T * b = reinterpret_cast<double*>(&log);
+                _center = center;
+                _coef = (T*) malloc_simd(sizeof(T)*terms);
+                _terms  = terms;
+                for (int i = 0; i < terms; ++i) {
+                    *(_coef+i) = *(b+1);
+                }
+            }
+
+        public:
+            ln_a(const T center, const unsigned int terms) {
+                init(center, terms);
+            }
+
+            ~ln_a() { free(_coef); }
+
+            inline T operator()(const T val) const {
+                T h = val - _center;
+#if defined HORNER
+                T result = anpi::opt::horner(h,_coef,_terms);
+#else
+                T result = anpi::opt::estrins(h,_coef,_terms);
+#endif
+                return result;
+            }
+
+            // Evaluacion de la n-esima derivada.
+            inline T diff(const T x, const unsigned int n) {
+                T result; //evaluar de alguna forma.
+                return result;
+            }
+        };
+
         template <typename T>
         T estrins(T x, T * a, const unsigned int length) {
 
