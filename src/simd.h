@@ -27,7 +27,6 @@ namespace anpi{
                         int i = 0;
                         for (i = 0; i + 2 * cantidad_Ts * exponente < grado; i += 2 * cantidad_Ts * exponente) {
 
-
                             __m128d leftd = _mm_set_pd(a[i + 2 * exponente], a[i]);
                             __m128d rightd = _mm_set_pd(a[i + 3 * exponente], a[i + exponente]);
                             __m128d xsd = _mm_set_pd1(x_ala_e);
@@ -69,7 +68,7 @@ namespace anpi{
 
                         h++;
                         exponente *= 2;
-                        x_ala_e *=x;
+                        x_ala_e =pow(x,exponente);
                 }
             }
             if (log2(grado) > (double) n) // si no es potencia de 2 le suma el ultimo

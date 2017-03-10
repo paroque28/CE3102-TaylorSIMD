@@ -14,16 +14,19 @@ namespace anpi {
             int n = log2(length); // cantidad pisos
             T x_ala_e = x;
             while (h <= n) {
+
                 for (int i = 0; i + exponente < length; i += 2 * exponente) {
 
-                    m[i] += m[i + exponente] * x_ala_e ;
+                    m[i] += m[i + exponente] * x_ala_e;
                 }
                 h++;
                 exponente *= 2;
-                x_ala_e *=x;
+                x_ala_e = pow(x,exponente);
             }
+
+
             if (log2(length) > (double) n) // si no es potencia de 2 le suma el ultimo
-                m[0] += m[(int)std::pow(2, n)] * pow(x, exponente);
+                m[0] += m[(int)std::pow(2, n)] * x_ala_e;
             return m[0];
         }
     }

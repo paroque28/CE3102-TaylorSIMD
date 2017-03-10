@@ -22,8 +22,8 @@ void * malloc_simd(const size_t size)
 
 int main() {
     std::cout.precision(100);
-    int l =;
-    float x = 4.7f;
+    int l =10;
+    float x = 2.0f;
     float * a =(float*)(malloc_simd(l*sizeof(float)));
     for (int i = 0; i < l; ++i) {
         *(a+i) = i;
