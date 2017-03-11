@@ -4,6 +4,7 @@
 
 #ifndef META_SIMD_H
 #define META_SIMD_H
+#define HORNER
 
 #include <cmath>
 #include "x86intrin.h"
@@ -36,7 +37,7 @@ namespace anpi{
 
                         __m128d leftd = _mm_set_pd(m[i + 2 * exponente], m[i]);
                         __m128d rightd = _mm_set_pd(m[i + 3 * exponente], m[i + exponente]);
-                        __m128d xsd = _mm_set_pd1(x_ala_e);
+                        __m128d xsd = _mm_set1_pd(x_ala_e);
                         __m128d interd = _mm_mul_pd(xsd, rightd);
                         __m128d resd = _mm_add_pd(leftd, interd);
                         m[i] = resd[0];
@@ -88,20 +89,21 @@ namespace anpi{
         T horner(T x, T *a, const unsigned int grado) {
             //Evaluacion secuencial de un polinomio mediante el metodo de Horner.
             if (sizeof(T)==8) {
-                __m128d result = _mm_set1_ps*(a[grado]);
+
+                __m128d result = _mm_set1_pd(a[grado]);
                 __m128d coef;
-                __m128d xm;
+                __m128d xm = _mm_set1_pd(x);
                 __m128d mult;
                 for(int i=grado-1; i >= 0 ; --i) {
-                    coef = _mm_set_pd1(a[i]);
+                    coef = _mm_set1_pd(a[i]);
                     mult = _mm_mul_pd(result,xm);
                     result = _mm_add_pd(result,mult);
                 }
                 return result[0];
             } else{
-                __m128 result = _mm_set1_ps*(a[grado]);
+                __m128 result = _mm_set1_ps(a[grado]);
                 __m128 coef;
-                __m128 xm;
+                __m128 xm = _mm_set1_ps(x);
                 __m128 mult;
                 for(int i=grado-1; i >= 0 ; --i) {
                     coef = _mm_set1_ps(a[i]);
@@ -143,7 +145,7 @@ namespace anpi{
             inline T operator()(const T val) const {
                 T h = val - _center;
 #if defined HORNER
-                return = horner(h,_coef,_terms);
+                return horner(h,_coef,_terms);
 #else
                 return estrins(h,_coef,_terms);
 #endif
@@ -188,7 +190,7 @@ namespace anpi{
             inline T operator()(const T val) const {
                 T h = val - _center;
 #if defined HORNER
-                return = horner(h,_coef,_terms);
+                return horner(h,_coef,_terms);
 #else
                 return estrins(h,_coef,_terms);
 #endif

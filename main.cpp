@@ -5,9 +5,6 @@
 #include "src/ref.h"
 #include "src/opt.h"
 
-//#define HORNER
-#define __linux__
-
 
 using namespace anpi;
 
@@ -31,6 +28,9 @@ int main() {
     opt::ln_a<double> opt_cos_centro10;
     opt_cos_centro10.init<10,13>();//centro 10, terms 5
 
+    ref::ln_a<double> ref_cos_centro10;
+    ref_cos_centro10.init<10,13>();//centro 10, terms 5
+
     //Calculatr log en 10
     std::cout << ref_log_centro10(11) << std::endl;
 
@@ -40,7 +40,7 @@ int main() {
     tests::time(opt_log_centro10,25000,10);
 
     //medir error
-    tests::error(opt_cos_centro10,5,10,&std::log);
+    tests::error(ref_cos_centro10,5,10,&std::log);
 
     return 0;
 }

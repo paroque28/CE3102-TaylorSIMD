@@ -1,6 +1,10 @@
+#ifndef META_SIMD
+#define META_SIMD
+
 #include <cmath>
 #include "meta.h"
 #include "alloc.h"
+#define HORNER
 //
 // Created by Pablo Rodriguez on 3/5/17.
 //
@@ -155,3 +159,6 @@ namespace anpi {
 
     }
 }
+
+
+#endif
