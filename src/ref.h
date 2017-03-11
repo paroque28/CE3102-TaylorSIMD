@@ -14,34 +14,35 @@ namespace anpi {
             T* _coef;
             T _center;
             unsigned int _terms;
-
-            void init(const T center, const unsigned int terms) {
+        public:
+            template<int center,int terms>
+            void init() {
                 a_log<center,terms> log;
 
-                T * b = reinterpret_cast<double*>(&log);
+                double * b = reinterpret_cast<double*>(&log);
                 _center = center;
                 _coef = (T*) malloc_simd(sizeof(T)*terms);
                 _terms  = terms;
                 for (int i = 0; i < terms; ++i) {
-                    *(_coef+i) = *(b+1);
+                    *(_coef+i) = (T) *(b+1);
                 }
             }
 
-        public:
-            ln_a(const T center, const unsigned int terms) {
-                init(center, terms);
+
+
+            ln_a() {
+
             }
 
             ~ln_a() { free(_coef); }
 
-            inline T operator()(const T val) const {
-                T h = val - _center;
+            inline T operator()(const T val) const{
+                const T h = val - _center;
 #if defined HORNER
-                T result = anpi::ref::horner(h,_coef,_terms);
+                return horner(h,_coef,_terms);
 #else
-                T result = anpi::ref::estrins(h,_coef,_terms);
+                return estrins(h,_coef,_terms);
 #endif
-                return result;
             }
 
             // Evaluacion de la n-esima derivada.
@@ -49,11 +50,10 @@ namespace anpi {
                 T result; //evaluar de alguna forma.
                 return result;
             }
-        };
 
 
-        template <typename  T>
-        T estrins(T x, T *a, const unsigned int length) {
+
+        T estrins(T x, T *a, unsigned int length)const {
             T * m = static_cast<T*>(malloc(sizeof(T) * length));
 
             for (int i = 0; i < length; ++i) {
@@ -85,8 +85,8 @@ namespace anpi {
 
 
 
-        template <typename T>
-        T horner(T x, T *a, const unsigned int grado) {
+
+        T horner(T x, T *a,  unsigned int grado) const{
             //Evaluacion secuencial de un polinomio mediante el metodo de Horner.
             T result = a[grado];
             for(int i=grado-1; i >= 0 ; --i)
@@ -94,7 +94,7 @@ namespace anpi {
             return result;
 
         }
-
+        };
 
 
 
