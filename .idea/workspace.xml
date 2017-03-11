@@ -15,9 +15,6 @@
     <list default="true" id="af50192c-912e-42ed-b724-3b2c26120a1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/opt.h" afterPath="$PROJECT_DIR$/src/opt.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ref.h" afterPath="$PROJECT_DIR$/src/ref.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.h" afterPath="$PROJECT_DIR$/src/test.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,11 +61,11 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+            <state relative-caret-position="195">
+              <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#197#209#0" expanded="true" />
+                <element signature="e#201#213#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -437,7 +434,7 @@
       <workItem from="1489116641545" duration="2151000" />
       <workItem from="1489174144791" duration="4413000" />
       <workItem from="1489180410845" duration="32000" />
-      <workItem from="1489180495996" duration="2964000" />
+      <workItem from="1489180495996" duration="3143000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Agregado el functor WIP&quot;">
       <created>1489114511915</created>
@@ -474,11 +471,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489178599416</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="listo con pruebas">
+      <created>1489201067986</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1489201067986</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9866000" />
+    <option name="totallyTimeSpent" value="10045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -490,7 +494,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -514,7 +518,8 @@
     <MESSAGE value="&quot;Agregado el functor WIP&quot;" />
     <MESSAGE value="codigo ordenado" />
     <MESSAGE value="codigo ordenado opt" />
-    <option name="LAST_COMMIT_MESSAGE" value="codigo ordenado opt" />
+    <MESSAGE value="listo con pruebas" />
+    <option name="LAST_COMMIT_MESSAGE" value="listo con pruebas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -556,7 +561,7 @@
           <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#197#209#0" expanded="true" />
+            <element signature="e#201#213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,7 +624,7 @@
           <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#197#209#0" expanded="true" />
+            <element signature="e#201#213#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,11 +797,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        <state relative-caret-position="195">
+          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#197#209#0" expanded="true" />
+            <element signature="e#201#213#0" expanded="true" />
           </folding>
         </state>
       </provider>
