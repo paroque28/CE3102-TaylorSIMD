@@ -448,7 +448,7 @@
       <workItem from="1489174144791" duration="4413000" />
       <workItem from="1489180410845" duration="32000" />
       <workItem from="1489180495996" duration="3143000" />
-      <workItem from="1489206471698" duration="4640000" />
+      <workItem from="1489206471698" duration="4666000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Agregado el functor WIP&quot;">
       <created>1489114511915</created>
@@ -527,11 +527,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489211025917</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="docu">
+      <created>1489211162752</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1489211162752</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14685000" />
+    <option name="totallyTimeSpent" value="14711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -573,7 +580,8 @@
     <MESSAGE value="diff" />
     <MESSAGE value="fix bug log" />
     <MESSAGE value="cambios de fran" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios de fran" />
+    <MESSAGE value="docu" />
+    <option name="LAST_COMMIT_MESSAGE" value="docu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
