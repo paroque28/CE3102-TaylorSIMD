@@ -21,20 +21,20 @@ int main() {
 
 
     ref::ln_a<double> ref_log_centro10;
-    ref_log_centro10.init<10,13>();//centro 10, terms 13 MAX
+    ref_log_centro10.init<10,4>();//centro 10, terms 13 MAX
     opt::ln_a<double> opt_log_centro10;
-    opt_log_centro10.init<10,13>();//centro 10, terms 13
+    opt_log_centro10.init<10,4>();//centro 10, terms 13
 
     opt::ln_a<double> opt_cos_centro10;
-    opt_cos_centro10.init<10,13>();//centro 10, terms 5
+    opt_cos_centro10.init<10,4>();//centro 10, terms 5
 
     ref::ln_a<double> ref_cos_centro10;
-    ref_cos_centro10.init<10,13>();//centro 10, terms 5
+    ref_cos_centro10.init<10,4>();//centro 10, terms 5
 
     //Calculatr log en 10
     std::cout << ref_log_centro10(11) << std::endl;
 
-    std::cout << opt_log_centro10(11) << std::endl;
+    std::cout << opt_cos_centro10(11) << std::endl;
     //medir tiempos
     tests::time(ref_log_centro10,25000,10); //25000 pruebas empezando en 10
     tests::time(opt_log_centro10,25000,10);

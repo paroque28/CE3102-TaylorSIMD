@@ -4,14 +4,22 @@
 
 #ifndef META_SIMD_H
 #define META_SIMD_H
-#define HORNER
+//#define HORNER
 
 #include <cmath>
 #include "x86intrin.h"
 
 namespace anpi{
     namespace opt{
-
+        int factorial (int n)
+        {
+            int fac =1;
+            for(int i = 1; i <=n; ++i)
+            {
+                fac *= i;
+            }
+            return fac;
+        }
 
         template<typename T>
         T estrins(T x, T * a, const unsigned int length){
@@ -125,9 +133,9 @@ namespace anpi{
         public:
             template<int center,int terms>
             void init() {
-                a_log<T,center,terms> log;
+                a_log<T,center,terms> as;
 
-                T * b = reinterpret_cast<T*>(&log);
+                T * b = reinterpret_cast<T*>(&as);
                 _center = center;
                 _coef = (T*) malloc_simd(sizeof(T)*terms);
                 _terms  = terms;
@@ -154,8 +162,7 @@ namespace anpi{
 
             // Evaluacion de la n-esima derivada.
             inline T diff(const T x, const unsigned int n) {
-                T result; //evaluar de alguna forma.
-                return result;
+                return ((((n-1) & 1) == 0) ?  -factorial(n-2 )/ std::pow(x, (n-1)) : factorial(n-2) / std::pow(x, (n-1)));
             }
 
 
@@ -170,9 +177,9 @@ namespace anpi{
         public:
             template<int center,int terms>
             void init() {
-                a_cos<T,center,terms> log;
+                a_cos<T,center,terms> as;
 
-                T * b = reinterpret_cast<T*>(&log);
+                T * b = reinterpret_cast<T*>(&as);
                 _center = center;
                 _coef = (T*) malloc_simd(sizeof(T)*terms);
                 _terms  = terms;
@@ -199,8 +206,9 @@ namespace anpi{
 
             // Evaluacion de la n-esima derivada.
             inline T diff(const T x, const unsigned int n) {
-                T result; //evaluar de alguna forma.
-                return result;
+                return ( (((n-1) & 1) == 0) ?  ( ((((n-1)/2) & 1) == 0) ? std::cos(x)  : - std::cos(x) )
+                                            : ( (((n/2) & 1) == 0) ? std::sin(x) : - std::sin(x))
+                );
             }
 
 
