@@ -8,10 +8,11 @@
 #include <chrono>
 #include <iostream>
 #include "function.h"
+using namespace std;
 namespace  anpi{
     namespace tests {
         template<typename T>
-        void time(anpi::funcion<T> &f, unsigned int num_tests, const float start) {
+        double time(anpi::funcion<T> &f, unsigned int num_tests, const float start) {
             T x = start;
             T d = (2.f - start) / num_tests;
             auto start_time = std::chrono::high_resolution_clock::now();
@@ -26,6 +27,7 @@ namespace  anpi{
 
             std::cout << "Clase: " << typeid(f).name() << " = " << static_cast<double>(ms) / num_tests << "ms"
                       << std::endl;
+            return  static_cast<double>(ms) / num_tests;
         }
 
         template<typename T>

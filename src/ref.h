@@ -4,7 +4,7 @@
 #include <cmath>
 #include "meta.h"
 #include "alloc.h"
-#define HORNER
+//#define HORNER
 //
 // Created by Pablo Rodriguez on 3/5/17.
 //
