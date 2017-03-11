@@ -140,7 +140,7 @@ namespace anpi{
                 _coef = (T*) malloc_simd(sizeof(T)*terms);
                 _terms  = terms;
                 for (int i = 0; i < terms; ++i) {
-                    *(_coef+i) = (T) *(b+1);
+                    *(_coef+i) =  *(b+i);
                 }
             }
 
@@ -184,7 +184,7 @@ namespace anpi{
                 _coef = (T*) malloc_simd(sizeof(T)*terms);
                 _terms  = terms;
                 for (int i = 0; i < terms; ++i) {
-                    *(_coef+i) = (T) *(b+1);
+                    *(_coef+i) =  *(b+i);
                 }
             }
 
