@@ -23,20 +23,24 @@ int main() {
     std::cout.precision(100);
 
 
-    ref::ln_a<double> ref;
-    ref.init<10,5>();//centro 10, terms 5
-    opt::ln_a<double> opt;
-    opt.init<10,5>();//centro 10, terms 5
+    ref::ln_a<double> ref_log_centro10;
+    ref_log_centro10.init<10,13>();//centro 10, terms 13 MAX
+    opt::ln_a<double> opt_log_centro10;
+    opt_log_centro10.init<10,13>();//centro 10, terms 13
 
-    std::cout << ref(10) << std::endl;
+    opt::ln_a<double> opt_cos_centro10;
+    opt_cos_centro10.init<10,13>();//centro 10, terms 5
 
-    std::cout << opt(10) << std::endl;
+    //Calculatr log en 10
+    std::cout << ref_log_centro10(11) << std::endl;
+
+    std::cout << opt_log_centro10(11) << std::endl;
     //medir tiempos
-    tests::time(ref,25000,10); //25000 pruebas empezando en 10
-    tests::time(opt,25000,10);
+    tests::time(ref_log_centro10,25000,10); //25000 pruebas empezando en 10
+    tests::time(opt_log_centro10,25000,10);
 
     //medir error
-    tests::error(ref,5,10,&std::log);
+    tests::error(opt_cos_centro10,5,10,&std::log);
 
     return 0;
 }
