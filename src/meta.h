@@ -21,28 +21,28 @@ struct Factorial<0>
 };
 
 
-template <int x,int I>
+template <typename T,int x,int I>
 struct a_log {
-    a_log<x,I - 1> rest;
-    double y = ((((I-1) & 1) == 0) ?  -Factorial<(I-2 )>::value / std::pow(x, (I-1)) : Factorial<(I-2)>::value / std::pow(x, (I-1)));
+    a_log<T,x,I - 1> rest;
+    T y = ((((I-1) & 1) == 0) ?  -Factorial<(I-2 )>::value / std::pow(x, (I-1)) : Factorial<(I-2)>::value / std::pow(x, (I-1)));
 };
 
-template <int x>
-struct a_log<x,1> {
-    double y =  std::log(x) ;
+template <typename T,int x>
+struct a_log<T,x,1> {
+    T y =  std::log(x) ;
 };
 
-template <int x,int I>
+template <typename T,int x,int I>
 struct a_cos {
-    a_cos<x,I - 1> rest;
-    double y = ( (((I-1) & 1) == 0) ?  ( ((((I-1)/2) & 1) == 0) ? std::cos(x)  : - std::cos(x) )
+    a_cos<T,x,I - 1> rest;
+    T y = ( (((I-1) & 1) == 0) ?  ( ((((I-1)/2) & 1) == 0) ? std::cos(x)  : - std::cos(x) )
                                         : ( (((I/2) & 1) == 0) ? std::sin(x) : - std::sin(x))
                     );
 };
 
-template <int x>
-struct a_cos<x,1> {
-    double y =  std::cos(x) ;
+template <typename T,int x>
+struct a_cos<T,x,1> {
+    T y =  std::cos(x) ;
 };
 
 
