@@ -57,7 +57,7 @@ Output:
 ### Graphs
 Command:
 ```
-anpiSIMD -g -n 200 --cos -o ../images/cos10.png --terms 10
+anpiSIMD -g -n 200 --cos -o ../images/cos10.png --terms 10 --start 9 --end 11
 ```
 Output:
 
@@ -66,7 +66,14 @@ Output:
 
 Command:
 ```
-anpiSIMD -g -n 200 --log -o ../images/log10.png --terms 10
+anpiSIMD -g -n 200 --log -o ../images/log10.png --terms 10 --start 8 --end 12
 ```
 Output:
 ![Function Log with 10 terms](images/log10.png)
+
+Command:
+```
+anpiSIMD -g -n 200 --log -o ../images/logtime10.png --time -x 12
+```
+Output:
+![Function Log vs time](images/logtime10.png)

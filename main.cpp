@@ -50,7 +50,74 @@ int main(int argc, char* argv[]) {
             int terms = MAX_TERMS;
             if (options.count("terms")) terms = options["terms"].as<int>(); //set number of coefs
             if (terms > MAX_TERMS) {cout << "Terms exceed max value"; return 1;}
-            if (options.count("x")) {
+            if (options.count("graph")) {
+                string title, output;
+                ref::ln_a<double> ref_log;  ref_log.init<10, MAX_TERMS>(terms);
+                opt::ln_a<double> opt_log;  opt_log.init<10, MAX_TERMS>(terms);
+                opt::cos_a<double> opt_cos; opt_cos.init<10, MAX_TERMS>(terms);
+                ref::cos_a<double> ref_cos; ref_cos.init<10, MAX_TERMS>(terms);
+                if (options.count("o")) output = options["o"].as<std::string>();
+                else {
+                    cout << "Required output path";
+                    return 1;
+                }
+                if(options.count("time"))
+                {
+                    title = "Time vs number of terms"
+                    int valor = 11;
+                    if (options.count("x")) valor = options["x"].as<int>();
+                    vector<double> x, y1, y2;
+                    for (int i = 1; i < 13; ++i) {
+                        ref_cos.setTerms(i);
+                        x.push_back(0.0+i);
+                        if (options.count("log")) {
+                            y1.push_back(tests::time(ref_log, 25000, valor));
+                            y2.push_back(tests::time(opt_log, 25000, valor));
+                        } else
+                        {
+                            y1.push_back(tests::time(ref_cos, 25000, valor));
+                            y2.push_back(tests::time(opt_cos, 25000, valor));
+                        }
+                    }
+                    graph(x, y1, y2, "ref", "opt", title, output);
+                }
+                else if(options.count("error"))
+                {
+                    vector<double> x, y1, y2;
+                    graph(x, y1, y2, "ref", "opt", title, output);
+                }
+                else {
+                    double start = 0.0;
+                    if (options.count("start")) start = options["start"].as<double>(); // set start
+                    double end = 20.;
+                    if (options.count("end")) end = options["end"].as<double>(); // set end
+                    if (end < start) {
+                        std::cout << "Error: start in greater than end";
+                        return 1;
+                    }
+
+                    double step = (end - start) / ntests;
+                    vector<double> x, y1, y2;
+                    for (double i = start; i < end; i += step) {
+                        x.push_back(i);
+                        if (options.count("log")) {
+                            y1.push_back(std::log(i));
+                            y2.push_back(opt_log(i));
+                            title = "Function log with " + std::to_string(terms) + " terms";
+                        } else if (options.count("cos")) {
+                            y1.push_back(std::cos(i));
+                            y2.push_back(opt_cos(i));
+                            title = "Function cos with " + std::to_string(terms) + " terms";
+                        } else {
+                            std::cout << "Need log or cos flag";
+                            return 1;
+                        }
+                    }
+                    graph(x, y1, y2, "ref", "opt", title, output);
+                }
+                exit(0);
+            }
+            else if (options.count("x")) {
                 int p = 10;
                 if (options.count("p")) p = options["p"].as<int>(); // set precission
                 int x = options["x"].as<int>(); //set x to evaluate
@@ -93,45 +160,6 @@ int main(int argc, char* argv[]) {
 
                     exit(0);
                 }
-            } else if (options.count("graph")) {
-                double start = 0.0;
-                string title;
-                if (options.count("start")) start = options["start"].as<double>(); // set start
-                double end = 20.;
-                if (options.count("end")) end = options["end"].as<double>(); // set end
-                if (end<start) {std::cout << "Error: start in greater than end";return 1;}
-                string output;
-                if (options.count("o")) output = options["o"].as<std::string>();
-                else {cout<< "Required output path";return 1;}
-                double step = (end-start)/ntests;
-                vector<double> x,y1,y2;
-                for (double i = start; i < end; i += step) {
-                    x.push_back(i);
-                    if (options.count("log")) {
-                        ref::ln_a<double> ref_log;
-                        ref_log.init<10, MAX_TERMS>(terms);
-                        opt::ln_a<double> opt_log;
-                        opt_log.init<10, MAX_TERMS>(terms);
-
-                        y1.push_back(ref_log(i));
-                        y2.push_back(opt_log(i));
-                        title = "Function log with " + std::to_string(terms) + " terms";
-                    }
-                    else if (options.count("cos")) {
-                        opt::cos_a<double> opt_cos;
-                        opt_cos.init<10, MAX_TERMS>(terms);
-
-                        ref::cos_a<double> ref_cos;
-                        ref_cos.init<10, MAX_TERMS>(terms);
-                        y1.push_back(ref_cos(i));
-                        y2.push_back(opt_cos(i));
-                        title = "Function cos with " + std::to_string(terms) + " terms";
-                    }
-                    else {std::cout << "Need log or cos flag";return 1;}
-                }
-                graph(x,y1,y2,"ref","opt",title,output);
-
-                exit(0);
             }
         } else std::cout << "Required number of tests" << std::endl;
 
