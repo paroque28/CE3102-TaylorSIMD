@@ -57,8 +57,16 @@ Output:
 ### Graphs
 Command:
 ```
-anpiSIMD -g -n 200 --cos -o ../images/1.png --terms 10
+anpiSIMD -g -n 200 --cos -o ../images/cos10.png --terms 10
 ```
 Output:
 
-![Function Cos with 10 terms](images/1.png)
+![Function Cos with 10 terms](images/cos10.png)
+
+
+Command:
+```
+anpiSIMD -g -n 200 --log -o ../images/log10.png --terms 10
+```
+Output:
+![Function Log with 10 terms](images/log10.png)
