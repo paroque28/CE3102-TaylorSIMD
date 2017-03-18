@@ -6,6 +6,7 @@
 #include "lib/optionparser.h"
 #include "lib/matplotlibcpp.h"
 #define MAX_TERMS 13
+#define CENTER 10
 using namespace anpi;
 namespace plt = matplotlibcpp;
 
@@ -51,11 +52,12 @@ int main(int argc, char* argv[]) {
             if (options.count("terms")) terms = options["terms"].as<int>(); //set number of coefs
             if (terms > MAX_TERMS) {cout << "Terms exceed max value"; return 1;}
             if (options.count("graph")) {
-                string title, output;
-                ref::ln_a<double> ref_log;  ref_log.init<10, MAX_TERMS>(terms);
-                opt::ln_a<double> opt_log;  opt_log.init<10, MAX_TERMS>(terms);
-                opt::cos_a<double> opt_cos; opt_cos.init<10, MAX_TERMS>(terms);
-                ref::cos_a<double> ref_cos; ref_cos.init<10, MAX_TERMS>(terms);
+                string title, atext,btext, output;
+                ref::ln_a<double> ref_log;  ref_log.init<CENTER, MAX_TERMS>(terms);
+                opt::ln_a<double> opt_log;  opt_log.init<CENTER, MAX_TERMS>(terms);
+                opt::cos_a<double> opt_cos; opt_cos.init<CENTER, MAX_TERMS>(terms);
+                ref::cos_a<double> ref_cos; ref_cos.init<CENTER, MAX_TERMS>(terms);
+                vector<double> x, y1, y2;
                 if (options.count("o")) output = options["o"].as<std::string>();
                 else {
                     cout << "Required output path";
@@ -63,30 +65,50 @@ int main(int argc, char* argv[]) {
                 }
                 if(options.count("time"))
                 {
-                    title = "Time vs number of terms"
+                    title = "Time vs number of terms";
+                    atext = "ref";
+                    btext = "opt";
                     int valor = 11;
                     if (options.count("x")) valor = options["x"].as<int>();
-                    vector<double> x, y1, y2;
                     for (int i = 1; i < 13; ++i) {
                         ref_cos.setTerms(i);
                         x.push_back(0.0+i);
                         if (options.count("log")) {
                             y1.push_back(tests::time(ref_log, 25000, valor));
                             y2.push_back(tests::time(opt_log, 25000, valor));
-                        } else
-                        {
+                        } else if (options.count("cos")) {
                             y1.push_back(tests::time(ref_cos, 25000, valor));
                             y2.push_back(tests::time(opt_cos, 25000, valor));
-                        }
+                        } else {
+                                std::cout << "Need log or cos flag";
+                                return 1;
+                            }
                     }
-                    graph(x, y1, y2, "ref", "opt", title, output);
+                    int a ;
                 }
                 else if(options.count("error"))
                 {
-                    vector<double> x, y1, y2;
-                    graph(x, y1, y2, "ref", "opt", title, output);
+                    title = "Error vs h";
+                    atext = "opt";
+                    btext = "std";
+                    for (double i = CENTER; i < CENTER +3; i+=0.001) {
+                        x.push_back(i-CENTER);
+                        if (options.count("log")) {
+                            y1.push_back(tests::errorVSh(opt_log,i,std::log));
+                            y2.push_back(0);
+                        } else if (options.count("cos")) {
+                            y1.push_back(tests::errorVSh(opt_cos,i,std::cos));
+                            y2.push_back(0);
+                        } else {
+                            std::cout << "Need log or cos flag";
+                            return 1;
+                        }
+                    }
+
                 }
                 else {
+                    atext = "std";
+                    btext = "opt";
                     double start = 0.0;
                     if (options.count("start")) start = options["start"].as<double>(); // set start
                     double end = 20.;
@@ -97,7 +119,6 @@ int main(int argc, char* argv[]) {
                     }
 
                     double step = (end - start) / ntests;
-                    vector<double> x, y1, y2;
                     for (double i = start; i < end; i += step) {
                         x.push_back(i);
                         if (options.count("log")) {
@@ -113,8 +134,9 @@ int main(int argc, char* argv[]) {
                             return 1;
                         }
                     }
-                    graph(x, y1, y2, "ref", "opt", title, output);
+
                 }
+                graph(x, y1, y2, atext, btext, title, output);
                 exit(0);
             }
             else if (options.count("x")) {
@@ -124,9 +146,9 @@ int main(int argc, char* argv[]) {
                 std::cout.precision(p);
                 if (options.count("log")) {
                     ref::ln_a<double> ref_log;
-                    ref_log.init<10, MAX_TERMS>(terms);
+                    ref_log.init<CENTER, MAX_TERMS>(terms);
                     opt::ln_a<double> opt_log;
-                    opt_log.init<10, MAX_TERMS>(terms);
+                    opt_log.init<CENTER, MAX_TERMS>(terms);
 
                     std::cout << "f(x)=" << ref_log(x) << std::endl;
 
@@ -142,10 +164,10 @@ int main(int argc, char* argv[]) {
                     exit(0);
                 } else if (options.count("cos")) {
                     opt::cos_a<double> opt_cos;
-                    opt_cos.init<10, MAX_TERMS>(terms);
+                    opt_cos.init<CENTER, MAX_TERMS>(terms);
 
                     ref::cos_a<double> ref_cos;
-                    ref_cos.init<10, MAX_TERMS>(terms);
+                    ref_cos.init<CENTER, MAX_TERMS>(terms);
 
                     std::cout << "f(x)=" << ref_cos(x) << std::endl;
 

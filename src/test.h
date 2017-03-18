@@ -40,6 +40,14 @@ namespace  anpi{
                 std::cout << "Error for x = " << x<< " : " << (teorica - y) / teorica * 100 << " %" << std::endl;
             }
         }
+        template<typename T>
+        double errorVSh(anpi::funcion<T> &f, T x, T (*ref)(T)) {
+            T y;
+            T teorica;
+            y = f(x);
+            teorica = ref(x);
+            return (teorica - y) / teorica * 100 ;
+        }
     }
 }
 

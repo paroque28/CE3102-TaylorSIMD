@@ -8,17 +8,20 @@ This project used the following libs inside the code:
 ## Usage
 ```
   anpiSIMD [OPTION...]
-
-  -l, --log             Use log for example
-  -c, --cos             Use cos for example
-  -g, --graph           Make a graph
-  -t, --time            Make a time test for both algorithms
-  -e, --error           Make an error percentage test
-  -x, --value arg       X to be evaluated
-  -a, --terms arg       Number of terms for coeficients
-  -n, --ntests arg      Number of tests
-  -p, --precission arg  Precission std::cout
-  -h, --help            Print help
+  
+    -l, --log             Use log for example
+    -c, --cos             Use cos for example
+    -g, --graph           Make a graph
+    -i, --start arg       Set graph start point
+    -f, --end arg         Set graph end point
+    -o, --output arg      Output of the graph
+    -t, --time            Make a time test for both algorithms
+    -e, --error           Make an error percentage test
+    -x, --value arg       X to be evaluated
+    -a, --terms arg       Number of terms for coeficients
+    -n, --ntests arg      Number of tests
+    -p, --precission arg  Precission std::cout
+    -h, --help            Print help
 ```
 
 ## Examples
@@ -77,3 +80,11 @@ anpiSIMD -g -n 200 --log -o ../images/logtime10.png --time -x 12
 ```
 Output:
 ![Function Log vs time](images/logtime10.png)
+
+
+Command:
+```
+anpiSIMD -g --log -o ../images/logerror.png --error
+```
+Output:
+![Function Error vs H](images/logerror.png)
