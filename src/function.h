@@ -11,6 +11,10 @@ namespace anpi
     template <typename T>
     class funcion
     {
+    protected:
+        T* _coef;
+        T _center;
+        unsigned int _terms;
     public:
         virtual T operator() (const T val) const {
             return 0;
@@ -18,6 +22,11 @@ namespace anpi
 
         virtual T diff(const T val, const unsigned int n) const {
             return 0;
+        }
+
+        virtual void setTerms(unsigned int t)
+        {
+            _terms = t;
         }
     };
 

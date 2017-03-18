@@ -68,21 +68,18 @@ namespace anpi {
 
         template<typename T>
         class ln_a : public funcion<T> {
-        private:
-            T *_coef;
-            T _center;
-            unsigned int _terms;
+
         public:
-            template<int center, int terms>
-            void init() {
-                a_log<T, center, terms> as;
+            template<int center, int max_terms>
+            void init(unsigned int terms) {
+                a_log<T, center, max_terms> as;
 
                 T *b = reinterpret_cast<T *>(&as);
-                _center = center;
-                _coef = (T *) malloc_simd(sizeof(T) * terms);
-                _terms = terms;
+                this->_center = center;
+                this->_coef = (T *) malloc_simd(sizeof(T) * terms);
+                this->_terms = terms;
                 for (int i = 0; i < terms; ++i) {
-                    *(_coef + i) =  *(b + i);
+                    *(this->_coef + i) =  *(b + i);
                 }
             }
 
@@ -91,14 +88,14 @@ namespace anpi {
 
             }
 
-            ~ln_a() { free(_coef); }
+            ~ln_a() { free(this->_coef); }
 
             inline T operator()(const T val) const {
-                const T h = val - _center;
+                const T h = val - this->_center;
 #if defined HORNER
-                return horner(h,_coef,_terms);
+                return horner(h,this->_coef,this->_terms);
 #else
-                return estrins(h, _coef, _terms);
+                return estrins(h, this->_coef, this->_terms);
 #endif
             }
 
@@ -113,38 +110,34 @@ namespace anpi {
 
         template<typename T>
         class cos_a : public funcion<T>{
-        private:
-            T* _coef;
-            T _center;
-            unsigned int _terms;
+
         public:
-            template<int center,int terms>
-            void init() {
-                a_cos<T,center,terms> as;
+            template<int center,int max_terms>
+            void init(unsigned int terms) {
+                a_cos<T,center,max_terms> as;
 
                 T * b = reinterpret_cast<T*>(&as);
-                _center = center;
-                _coef = (T*) malloc_simd(sizeof(T)*terms);
-                _terms  = terms;
+                this->_center = center;
+                this->_coef = (T*) malloc_simd(sizeof(T)*terms);
+                this->_terms  = terms;
                 for (int i = 0; i < terms; ++i) {
-                    *(_coef+i) = *(b+i);
+                    *(this->_coef+i) = *(b+i);
                 }
             }
-
 
 
             cos_a() {
 
             }
 
-            ~cos_a() { free(_coef); }
+            ~cos_a() { free(this->_coef); }
 
             inline T operator()(const T val) const{
-                const T h = val - _center;
+                const T h = val - this->_center;
 #if defined HORNER
-                return horner(h,_coef,_terms);
+                return horner(h,this->_coef,this->_terms);
 #else
-                return estrins(h,_coef,_terms);
+                return estrins(h,this->_coef,this->_terms);
 #endif
             }
 

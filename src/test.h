@@ -24,9 +24,6 @@ namespace  anpi{
             auto end_time = std::chrono::high_resolution_clock::now();
             auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 
-
-            std::cout << "Clase: " << typeid(f).name() << " = " << static_cast<double>(ms) / num_tests << "ms"
-                      << std::endl;
             return  static_cast<double>(ms) / num_tests;
         }
 
@@ -40,7 +37,7 @@ namespace  anpi{
             for (unsigned int i = 0; i < num_tests; i++, x += d) {
                 y = f(x);
                 teorica = ref(x);
-                std::cout << typeid(f).name() << " error: " << (teorica - y) / teorica * 100 << "%" << std::endl;
+                std::cout << "Error for x = " << x<< " : " << (teorica - y) / teorica * 100 << " %" << std::endl;
             }
         }
     }
