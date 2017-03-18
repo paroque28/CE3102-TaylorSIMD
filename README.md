@@ -1,12 +1,28 @@
 # CE3102-TaylorSIMD
-Comparison of Series Taylor using SIMD instructions
+SIMD optimization for aproximation of functions and statistics
 
+This project used the following libs inside the code:
+ - matplotlibcpp
+ - cxxopts
 
 ## Usage
+```
+  anpiSIMD [OPTION...]
 
+  -l, --log             Use log for example
+  -c, --cos             Use cos for example
+  -g, --graph           Make a graph
+  -t, --time            Make a time test for both algorithms
+  -e, --error           Make an error percentage test
+  -x, --value arg       X to be evaluated
+  -a, --terms arg       Number of terms for coeficients
+  -n, --ntests arg      Number of tests
+  -p, --precission arg  Precission std::cout
+  -h, --help            Print help
+```
 
 ## Examples
-
+Use of the command line for this project
 ### Error for log
 Command:
 ```
@@ -37,3 +53,12 @@ Output:
     Reference time: 0.000360000000000000022672835831017
     Optimized time: 0.000240000000000000006080205783299
 ```
+
+### Graphs
+Command:
+```
+anpiSIMD -g -n 200 --cos -o ../images/1.png --terms 10
+```
+Output:
+
+![Function Cos with 10 terms](images/1.png)

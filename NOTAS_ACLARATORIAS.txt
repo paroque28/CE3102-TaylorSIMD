@@ -1,0 +1,3 @@
+El paper esta en README.pdf y las notas de uso en README.md
+Para su comodidad refierase a https://github.com/paroque28/CE3102-TaylorSIMD para una mejor visualizacion
+Gracias
